@@ -94,47 +94,42 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.92;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
 
-	[255] = 0,
+	[0] = "#1a1a1a", /* Deep background */
+	[1] = "#fc9eb5", /* Primary pink (accents) */
+	[2] = "#ff7474", /* Red-brown (variables) */
+	[3] = "#c9a180", /* Dusty peach (types/constants) */
+	[4] = "#a98274", /* Muted brown (comments) */
+	[5] = "#d7a8a1", /* Rose ash (strings) */
+	[6] = "#b48e76", /* Warm clay (specials) */
+	[7] = "#e9ddd6", /* Cream white (foreground) */
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	[8]  = "#808080", /* Bright black */
+	[9]  = "#ffc4d4", /* Bright pink */
+	[10] = "#ffa3a3", /* Bright red-orange */
+	[11] = "#f5caa2", /* Bright peach */
+	[12] = "#c9a28c", /* Brighter brown */
+	[13] = "#f5d0ca", /* Bright dusty rose */
+	[14] = "#e6bda7", /* Brighter clay */
+	[15] = "#fff7f1", /* Softest cream */
+
+
+
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -144,7 +139,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
